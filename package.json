@@ -1,0 +1,33 @@
+{
+  "name": "our-little-space",
+  "version": "0.2.1",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --hostname 0.0.0.0",
+    "build": "next build",
+    "start": "next start --hostname 0.0.0.0",
+    "typecheck": "tsc --noEmit",
+    "test": "node --experimental-strip-types --test src/lib/domain.test.ts src/lib/cloud/reliability.test.ts src/lib/cloud/session.test.ts src/lib/cloud/response.test.ts src/lib/cloud/photo-url.test.ts src/lib/cloud/email-verification.test.ts src/lib/cloud/registration.test.ts",
+    "test:rls": "node --test --experimental-test-isolation=none --test-reporter=spec --test-timeout=30000 supabase/tests/rls.test.mjs",
+    "build:domestic-preview": "node scripts/build-domestic-preview.mjs",
+    "test:cloudbase": "node --test --experimental-test-isolation=none --test-reporter=spec --test-timeout=30000 cloudbase/tests/rls.test.mjs"
+  },
+  "dependencies": {
+    "@cloudbase/js-sdk": "^3.11.0",
+    "@supabase/postgrest-js": "^2.119.0",
+    "@supabase/supabase-js": "^2.119.0",
+    "next": "16.4.5",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "0.5.15",
+    "@tailwindcss/postcss": "4.3.4",
+    "@types/node": "^22",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "tailwindcss": "4.3.4",
+    "typescript": "^5.9.3"
+  },
+  "type": "module"
+}
